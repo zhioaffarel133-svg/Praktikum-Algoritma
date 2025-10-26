@@ -1,0 +1,34 @@
+Nomer 1
+
+buah = ['apel','mangga','jeruk','anggur','pisang']
+buah.append('semangka')
+print(f'Buah setelah di tambah semangka: {buah}')
+buah.insert(3,'durian')
+print(f'Buah setelah di tambah durian di antara jeruk dan anggur: {buah}')
+buah.remove('mangga')
+print(f'Buah setelah mangga di hapus: {buah}')
+buah[4] = 'nanas'
+print(f'buah pisang setelah di ubah nanas: {buah}')
+tiga_buah = buah[:3]
+print(f'Tiga buah pertama: {tiga_buah}')
+
+Output:
+Buah setelah di tambah semangka: ['apel', 'mangga', 'jeruk', 'anggur', 'pisang', 'semangka']
+Buah setelah di tambah durian di antara jeruk dan anggur: ['apel', 'mangga', 'jeruk', 'durian', 'anggur', 'pisang', 'semangka']
+Buah setelah mangga di hapus: ['apel', 'jeruk', 'durian', 'anggur', 'pisang', 'semangka']
+buah pisang setelah di ubah nanas: ['apel', 'jeruk', 'durian', 'anggur', 'nanas', 'semangka']
+Tiga buah pertama: ['apel', 'jeruk', 'durian']
+
+Nomer 2
+
+angka = [45, 12, 78, 23, 56, 89, 34]
+print(f'Nilai awal: {angka}')
+angka.sort()
+print(f'Ascending: {angka}')
+angka.sort(reverse = True)
+print(f'Descending: {angka}')
+
+Output:
+Nilai awal: [45, 12, 78, 23, 56, 89, 34]
+Ascending: [12, 23, 34, 45, 56, 78, 89]
+Descending: [89, 78, 56, 45, 34, 23, 12]
