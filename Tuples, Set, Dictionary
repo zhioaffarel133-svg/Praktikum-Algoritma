@@ -1,0 +1,35 @@
+TUPLES
+Program:
+Mahasiswa = ('Zhio Affarel',2505060063,'Teknologi Informasi')
+print(Mahasiswa)
+print(f'Nim: {Mahasiswa[1]}')
+print(f'Prodi: {Mahasiswa[2]}')
+
+Output:
+('Zhio Affarel', 2505060063, 'Teknologi Informasi')
+Nim: 2505060063
+Prodi: Teknologi Informasi
+
+
+
+DICTONARY
+Program:
+data_dict = {
+    'Apel':5000,
+    'Pisang':3000,
+    'Jeruk':7000,
+    'Anggur':15000
+}
+perulangan=0
+total=0
+for Buah,Harga in data_dict.items():
+  print(f'Harga\t{Buah}\t:Rp{Harga}')
+  total+= Harga
+print(f'Total Harga Belanjaan: {total}\n')
+
+Output:
+Harga	Apel	:Rp5000
+Harga	Pisang	:Rp3000
+Harga	Jeruk	:Rp7000
+Harga	Anggur	:Rp15000
+Total Harga Belanjaan: 30000
