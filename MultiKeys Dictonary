@@ -1,0 +1,141 @@
+import datetime
+import os
+import string
+import random
+
+buku_template = {
+    'judul': 'judul',
+    'penulis': 'penulis',
+    'tahun_terbit': 0000,
+    'tanggal_terakhir_pinjam': datetime.datetime(1111,1,11),
+    'status': 'TERSEDIA'
+}
+
+data_perpustakaan = {}
+
+while True:
+    os.system("clear")
+
+    print(f"{'=' * 50}")
+    print(f"{'SISTEM MANAJEMEN PERPUSTAKAAN':^50}")
+    print(f"{'=' * 50}")
+    print()
+
+    # Input data buku
+    buku = dict.fromkeys(buku_template.keys())
+    buku['judul'] = input("Judul Buku: ")
+    buku['penulis'] = input("Penulis: ")
+    buku['tahun_terbit'] = int(input("Tahun Terbit: "))
+
+    print("\nTanggal Terakhir Pinjam:")
+    TAHUN = int(input("  Tahun (YYYY): "))
+    BULAN = int(input("  Bulan (1-12): "))
+    TANGGAL = int(input("  Tanggal (1-31): "))
+    buku['tanggal_terakhir_pinjam'] = datetime.datetime(TAHUN, BULAN, TANGGAL)
+
+    print("\nStatus Buku:")
+    print("1. TERSEDIA")
+    print("2. TIDAK TERSEDIA")
+    pilihan_status = input("Pilih status (1/2): ")
+    buku['status'] = "TERSEDIA" if pilihan_status == "1" else "TIDAK TERSEDIA"
+
+    KEY = ''.join((random.choice(string.ascii_uppercase) for i in range(6)))
+    data_perpustakaan.update({KEY: buku})
+
+    print(f"\n{'=' * 90}")
+    print(f"{'DAFTAR BUKU PERPUSTAKAAN':^90}")
+    print(f"{'=' * 90}")
+    print(f"{'KEY':<8} {'Judul':<20} {'Penulis':<15} {'Tahun':<6} {'Tgl Pinjam':<12} {'Status':<15}")
+    print('-' * 90)
+
+    for key_buku in data_perpustakaan:
+        KEY_DISPLAY = key_buku
+        JUDUL = data_perpustakaan[key_buku]['judul']
+        PENULIS = data_perpustakaan[key_buku]['penulis']
+        TAHUN = data_perpustakaan[key_buku]['tahun_terbit']
+        TGL_PINJAM = data_perpustakaan[key_buku]['tanggal_terakhir_pinjam'].strftime("%d/%m/%Y")
+        STATUS = data_perpustakaan[key_buku]['status']
+
+        print(f"{KEY_DISPLAY:<8} {JUDUL:<20} {PENULIS:<15} {TAHUN:<6} {TGL_PINJAM:<12} {STATUS:<15}")
+
+    print(f"{'=' * 90}")
+    print(f"\nTotal Buku: {len(data_perpustakaan)}")
+
+    print("\n")
+    tambah_lagi = input("Tambah buku lagi? (y/n): ")
+    if tambah_lagi.lower() == "n":
+        break
+
+print("\n" + "="*50)
+print(f"{'Terima kasih telah menggunakan sistem':^50}")
+print(f"{'Program selesai':^50}")
+print("="*50)
+
+
+Output:
+==================================================
+          SISTEM MANAJEMEN PERPUSTAKAAN           
+==================================================
+
+Judul Buku: vandra 
+Penulis: vandra
+Tahun Terbit: 2006
+
+Tanggal Terakhir Pinjam:
+  Tahun (YYYY): 2025
+  Bulan (1-12): 12
+  Tanggal (1-31): 1
+
+Status Buku:
+1. TERSEDIA
+2. TIDAK TERSEDIA
+Pilih status (1/2): 1
+
+==========================================================================================
+                                 DAFTAR BUKU PERPUSTAKAAN                                 
+==========================================================================================
+KEY      Judul                Penulis         Tahun  Tgl Pinjam   Status         
+------------------------------------------------------------------------------------------
+TWJOHP   vandra               vandra          2006   01/12/2025   TERSEDIA       
+==========================================================================================
+
+Total Buku: 1
+
+
+Tambah buku lagi? (y/n): y
+==================================================
+          SISTEM MANAJEMEN PERPUSTAKAAN           
+==================================================
+
+Judul Buku: zhio
+Penulis: zhio
+Tahun Terbit: 2006
+
+Tanggal Terakhir Pinjam:
+  Tahun (YYYY): 2025
+  Bulan (1-12): 12
+  Tanggal (1-31): 1
+
+Status Buku:
+1. TERSEDIA
+2. TIDAK TERSEDIA
+Pilih status (1/2): 2
+
+==========================================================================================
+                                 DAFTAR BUKU PERPUSTAKAAN                                 
+==========================================================================================
+KEY      Judul                Penulis         Tahun  Tgl Pinjam   Status         
+------------------------------------------------------------------------------------------
+TWJOHP   vandra               vandra          2006   01/12/2025   TERSEDIA       
+SBGRWB   zhio                 zhio            2006   01/12/2025   TIDAK TERSEDIA 
+==========================================================================================
+
+Total Buku: 2
+
+
+Tambah buku lagi? (y/n): n
+
+==================================================
+      Terima kasih telah menggunakan sistem       
+                 Program selesai                  
+==================================================
