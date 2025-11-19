@@ -1,0 +1,48 @@
+Kode Program:
+
+import math
+# a. Luas persegi panjang
+def luas_persegi_panjang(panjang, lebar):
+    luas = panjang * lebar
+    return luas
+# b. Volume persegi panjang (balok)
+def volume_balok(panjang, lebar, tinggi):
+    volume = panjang * lebar * tinggi
+    return volume
+# c. Luas lingkaran
+def luas_lingkaran(jari_jari):
+    luas = math.pi * jari_jari ** 2
+    return luas
+# d. Volume bola
+def volume_bola(jari_jari):
+    volume = (4/3) * math.pi * jari_jari ** 3
+    return volume
+# Dengan input dari user
+print("\n===INPUT===")
+p = float(input("Masukkan panjang persegi panjang: "))
+l = float(input("Masukkan lebar persegi panjang: "))
+print(f"Luas persegi panjang: {luas_persegi_panjang(p, l)} cm²")
+t = float(input("Masukkan tinggi balok: "))
+print(f"Volume balok: {volume_balok(p, l, t)} cm³")
+r = float(input("Masukkan jari-jari lingkaran: "))
+print(f"Luas lingkaran: {luas_lingkaran(r):.2f} cm²")
+print(f"Volume bola: {volume_bola(r):.2f} cm³")
+
+Output:
+===INPUT===
+Masukkan panjang persegi panjang: 10
+Masukkan lebar persegi panjang: 5
+Luas persegi panjang: 50.0 cm²
+Masukkan tinggi balok: 2
+Volume balok: 100.0 cm³
+Masukkan jari-jari lingkaran: 5
+Luas lingkaran: 78.54 cm²
+Volume bola: 523.60 cm³
+
+Program latihan ini mengimplementasikan empat
+fungsi untuk perhitungan geometri.
+Setiap fungsi menerima parameter yang diperlukan dan
+mengembalikan hasil perhitungan.Program menggunakan
+modul math untuk mengakses konstanta pi.
+Fungsi-fungsi ini dapat dipanggil dengan nilai langsung atau
+dengan input dari user menggunakan fungsi input()
